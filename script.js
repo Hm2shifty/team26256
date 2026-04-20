@@ -200,29 +200,72 @@ let statsLoaded = false;
 async function loadFTCStats() {
     const statsContainer = document.getElementById('stats-container');
 
-    try {
-        setTimeout(() => {
-            const html = `
-                <div class="card" style="text-align: center; padding: 64px 24px; background: linear-gradient(to bottom, var(--bg-surface), rgba(125,211,252,0.05)); border: 1px dashed var(--border-dark);">
-                    <svg viewBox="0 0 24 24" width="48" height="48" stroke="var(--accent-blue)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 24px;">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                    <h3 style="color: var(--accent-blue); margin-bottom: 16px;">Season is yet to start!</h3>
-                    <p style="max-width: 500px; margin: 0 auto; color: var(--text-secondary);">Live FTC telemetry data, match results, and season awards will automatically synchronize and populate here as soon as our official competitions begin.</p>
-                </div>
-            `;
+    const html = `
+        <div class="season-tabs">
+            <button class="season-btn active" data-target="preseason">Upcoming Season</button>
+            <button class="season-btn" data-target="deep">INTO THE DEEP (24-25)</button>
+        </div>
 
-            statsContainer.innerHTML = html;
-            statsLoaded = true;
-        }, 1200);
-
-    } catch (error) {
-        statsContainer.innerHTML = `
-            <div class="card" style="border-color: #EF4444;">
-                <h4 style="color: #EF4444;">Telemetry Sync Failed</h4>
-                <p>Could not reach FTC Events API. Check authorization token.</p>
+        <div id="preseason" class="season-content" style="display: block;">
+            <div class="card" style="text-align: center; padding: 64px 24px; background: linear-gradient(to bottom, var(--bg-surface), rgba(125,211,252,0.05)); border: 1px dashed var(--border-dark);">
+                <svg viewBox="0 0 24 24" width="48" height="48" stroke="var(--accent-blue)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 24px;">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <h3 style="color: var(--accent-blue); margin-bottom: 16px;">Season is yet to start!</h3>
+                <p style="max-width: 500px; margin: 0 auto; color: var(--text-secondary);">Live FTC telemetry data, match results, and season awards will automatically synchronize and populate here as soon as our official competitions begin.</p>
             </div>
-        `;
-    }
+        </div>
+
+        <div id="deep" class="season-content" style="display: none;">
+            <div class="api-card-grid">
+                <div class="card api-card">
+                    <div class="stat-value">#6</div>
+                    <div class="stat-label">Regional Rank</div>
+                </div>
+                <div class="card api-card">
+                    <div class="stat-value">112.4</div>
+                    <div class="stat-label">Calculated OPR</div>
+                </div>
+                <div class="card api-card">
+                    <div class="stat-value">14-4-0</div>
+                    <div class="stat-label">W-L-T Record</div>
+                </div>
+                <div class="card api-card">
+                    <div class="stat-value">215 pts</div>
+                    <div class="stat-label">High Score</div>
+                </div>
+            </div>
+
+            <h3 class="section-title">Season Awards</h3>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h4>Inspire Award Winner</h4>
+                    <p>Event: Regional Championship</p>
+                </div>
+                <div class="card">
+                    <h4>Design Award Finalist</h4>
+                    <p>Event: Regional Championship</p>
+                </div>
+            </div>
+        </div>
+    `;
+
+    statsContainer.innerHTML = html;
+
+    // Tab Switching Logic
+    const btns = statsContainer.querySelectorAll('.season-btn');
+    const contents = statsContainer.querySelectorAll('.season-content');
+
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btns.forEach(b => b.classList.remove('active'));
+            contents.forEach(c => c.style.display = 'none');
+
+            btn.classList.add('active');
+            statsContainer.querySelector('#' + btn.dataset.target).style.display = 'block';
+        });
+    });
+
+    statsLoaded = true;
 }
