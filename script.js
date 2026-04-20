@@ -4,8 +4,11 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Initial Load Dependencies (Like Home Page Sponsor Marquee)
+    loadSponsorsData();
+
     // 1. SPA Routing Logic
-    const navLinks = document.querySelectorAll('.nav-links a, .nav-cta');
+    const navLinks = document.querySelectorAll('.nav-links a');
     const pages = document.querySelectorAll('.page');
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navContainer = document.querySelector('.nav-links');
@@ -43,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('hashchange', () => navigate(window.location.hash));
     navigate(window.location.hash || '#home');
-
 
     // 2. Carousel Logic
     const track = document.querySelector('.carousel-track');
@@ -112,20 +114,93 @@ async function loadTeamData() {
         `).join('');
     } catch (e) {
         console.error(e);
-        teamGrid.innerHTML = '<div class="card"><p style="color: #EF4444;">Failed to load team-members.json. Ensure you are running through a local server to fetch files.</p></div>';
     }
 
     teamLoaded = true;
 }
 
-// 4. FTC Phase 2 API Integration
-let statsLoaded = false;
+// 4. Sponsor Data Injection & Marquee Generation (FROM JSON FILE)
+let sponsorsLoaded = false;
+async function loadSponsorsData() {
+    if (sponsorsLoaded) return;
 
+    const sponsorsContainer = document.getElementById('sponsors-container');
+    const marqueeTrack = document.getElementById('marquee-track');
+
+    try {
+        const response = await fetch('sponsors.json');
+        if (!response.ok) throw new Error("Could not load sponsors.json");
+
+        const tiers = await response.json();
+
+        // 1. Build the Page HTML
+        let html = '';
+
+        // Diamond Tier (Gets Bio)
+        if (tiers.diamond && tiers.diamond.length > 0) {
+            html += `<div class="tier diamond-tier"><h3 class="diamond-text">Diamond Sponsors</h3><div class="grid grid-2">`;
+            tiers.diamond.forEach(s => {
+                html += `
+                <a href="${s.url}" target="_blank" class="card sponsor-card diamond-card">
+                    <img src="${s.logo}" alt="${s.name}" class="sponsor-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span class="marquee-fallback" style="display:none; color: var(--text-primary); font-size: 24px; font-weight: bold; margin-bottom: 24px;">${s.name}</span>
+                    <p class="sponsor-bio">${s.bio}</p>
+                </a>`;
+            });
+            html += `</div></div>`;
+        }
+
+        // Other Tiers (No Bio, Standard Grid)
+        ['gold', 'silver', 'bronze'].forEach(tierLevel => {
+            if (tiers[tierLevel] && tiers[tierLevel].length > 0) {
+                html += `<div class="tier ${tierLevel}-tier"><h3 class="${tierLevel}-text" style="text-transform: capitalize;">${tierLevel} Sponsors</h3><div class="grid grid-3">`;
+                tiers[tierLevel].forEach(s => {
+                    html += `
+                    <a href="${s.url}" target="_blank" class="card sponsor-card">
+                        <img src="${s.logo}" alt="${s.name}" class="sponsor-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span class="marquee-fallback" style="display:none; color: var(--text-primary); font-weight: 600;">${s.name}</span>
+                    </a>`;
+                });
+                html += `</div></div>`;
+            }
+        });
+
+        if (sponsorsContainer) sponsorsContainer.innerHTML = html;
+
+        // 2. Build the Infinite Marquee for Home Page
+        let allSponsors = [];
+        Object.values(tiers).forEach(tierList => allSponsors = allSponsors.concat(tierList));
+
+        if (allSponsors.length > 0 && marqueeTrack) {
+            let marqueeHtml = '';
+            // Render it 3 times so the loop doesn't break on wide screens
+            for (let i = 0; i < 3; i++) {
+                allSponsors.forEach(s => {
+                    marqueeHtml += `
+                    <a href="${s.url}" target="_blank" title="${s.name}">
+                        <img src="${s.logo}" alt="${s.name}" class="marquee-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                        <span class="marquee-fallback" style="display:none;">${s.name}</span>
+                    </a>`;
+                });
+            }
+            marqueeTrack.innerHTML = marqueeHtml;
+        }
+
+    } catch (e) {
+        console.error(e);
+        if (sponsorsContainer) sponsorsContainer.innerHTML = '<div class="card"><p style="color: #EF4444;">Failed to load sponsors.json. Add your sponsors there.</p></div>';
+    }
+
+    sponsorsLoaded = true;
+}
+
+
+// 5. FTC Phase 2 API Integration
+let statsLoaded = false;
 async function loadFTCStats() {
     const statsContainer = document.getElementById('stats-container');
 
     try {
-        // Simulated API Call. When real API token is acquired, switch to standard fetch.
         setTimeout(() => {
             const ftcResponsePayload = {
                 rank: 6,
@@ -171,7 +246,6 @@ async function loadFTCStats() {
         }, 1200);
 
     } catch (error) {
-        console.error("FTC API Fetch Error:", error);
         statsContainer.innerHTML = `
             <div class="card" style="border-color: #EF4444;">
                 <h4 style="color: #EF4444;">Telemetry Sync Failed</h4>

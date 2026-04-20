@@ -1,0 +1,25 @@
+{
+    "diamond": [
+        {
+            "name": "Local Tech Inc.",
+            "url": "https://example.com",
+            "logo": "assets/sponsors/diamond1.png",
+            "bio": "Our Title Sponsor providing extensive manufacturing resources and engineering mentorship. Click to learn more about their incredible community support."
+        }
+    ],
+    "gold": [
+        {
+            "name": "Engineering Firm B",
+            "url": "https://example.com",
+            "logo": "assets/sponsors/gold1.png"
+        }
+    ],
+    "silver": [
+        {
+            "name": "Community Partner A",
+            "url": "https://example.com",
+            "logo": "assets/sponsors/silver1.png"
+        }
+    ],
+    "bronze": []
+}
