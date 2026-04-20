@@ -200,6 +200,54 @@ let statsLoaded = false;
 async function loadFTCStats() {
     const statsContainer = document.getElementById('stats-container');
 
+    const historyData = {
+        topOPR: 18.74,
+        worldRank: "5832nd",
+        totalRecord: "5-5-0",
+        events: [
+            {
+                name: "FTC Central Scarborough Qualifier",
+                date: "Nov 23, 2024",
+                rank: "10th",
+                opr: 18.74,
+                record: "3-2-0",
+                awards: ["Finalist Alliance 1st Pick", "Think Award 2nd Place"]
+            },
+            {
+                name: "FTC Mississauga Qualifier",
+                date: "Nov 30, 2024",
+                rank: "22nd",
+                opr: 2.04,
+                record: "2-3-0",
+                awards: ["Judges' Choice Award Winner"]
+            }
+        ]
+    };
+
+    let eventsHtml = '';
+    historyData.events.forEach(ev => {
+        eventsHtml += `
+            <div class="card" style="margin-bottom: 24px;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--border-dark); padding-bottom: 16px; margin-bottom: 16px; flex-wrap: wrap; gap: 16px;">
+                    <div>
+                        <h4 style="color: var(--accent-blue); margin-bottom: 4px;">${ev.name}</h4>
+                        <span style="color: var(--text-secondary); font-size: 14px;">${ev.date}</span>
+                    </div>
+                    <div style="text-align: right;">
+                        <span style="display: block; font-weight: bold; font-size: 18px;">${ev.rank} Place</span>
+                        <span style="color: var(--text-secondary); font-size: 14px;">W-L-T: ${ev.record}</span>
+                    </div>
+                </div>
+                
+                <h5 style="margin-bottom: 12px; font-size: 14px; text-transform: uppercase; color: var(--text-secondary);">Event Highlights & Awards</h5>
+                <ul style="list-style-position: inside; color: var(--text-primary); margin-left: 8px;">
+                    ${ev.awards.map(a => `<li style="margin-bottom: 4px;">${a}</li>`).join('')}
+                    <li style="margin-bottom: 4px;">Calculated OPR: ${ev.opr}</li>
+                </ul>
+            </div>
+        `;
+    });
+
     const html = `
         <div class="season-tabs">
             <button class="season-btn active" data-target="preseason">Upcoming Season</button>
@@ -218,36 +266,27 @@ async function loadFTCStats() {
         </div>
 
         <div id="deep" class="season-content" style="display: none;">
-            <div class="api-card-grid">
+            <div class="api-card-grid" style="margin-bottom: 48px;">
                 <div class="card api-card">
-                    <div class="stat-value">#6</div>
-                    <div class="stat-label">Regional Rank</div>
+                    <div class="stat-value">${historyData.worldRank}</div>
+                    <div class="stat-label">Global Rank</div>
                 </div>
                 <div class="card api-card">
-                    <div class="stat-value">112.4</div>
-                    <div class="stat-label">Calculated OPR</div>
+                    <div class="stat-value">${historyData.topOPR}</div>
+                    <div class="stat-label">Best OPR</div>
                 </div>
                 <div class="card api-card">
-                    <div class="stat-value">14-4-0</div>
-                    <div class="stat-label">W-L-T Record</div>
+                    <div class="stat-value">${historyData.totalRecord}</div>
+                    <div class="stat-label">Total Record</div>
                 </div>
                 <div class="card api-card">
-                    <div class="stat-value">215 pts</div>
-                    <div class="stat-label">High Score</div>
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">Events Played</div>
                 </div>
             </div>
 
-            <h3 class="section-title">Season Awards</h3>
-            <div class="grid grid-2">
-                <div class="card">
-                    <h4>Inspire Award Winner</h4>
-                    <p>Event: Regional Championship</p>
-                </div>
-                <div class="card">
-                    <h4>Design Award Finalist</h4>
-                    <p>Event: Regional Championship</p>
-                </div>
-            </div>
+            <h3 class="section-title">Event Breakdown</h3>
+            ${eventsHtml}
         </div>
     `;
 
