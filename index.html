@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWERVO 26256 | Precision Engineering</title>
+    <meta name="description"
+        content="FTC Team 26256 SWERVO - Precision-driven robotics through iterative engineering systems.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="#home" class="logo">SWERVO <span class="team-number">26256</span></a>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#robot">Robot</a>
+                <a href="#team">Team</a>
+                <a href="#sponsors">Sponsors</a>
+                <a href="#outreach">Outreach</a>
+                <a href="#stats">Stats</a>
+            </nav>
+            <a href="#registration" class="btn btn-primary nav-cta">Join Team</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- HOME PAGE -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Precision-driven robotics through iterative engineering.</h1>
+                    <p class="tagline">We are FTC Team 26256. Building advanced mechanical systems and writing
+                        structured automation to compete at the highest level of the FIRST Tech Challenge.</p>
+                    <div class="hero-actions">
+                        <a href="#robot" class="btn btn-primary">View Robot Specs</a>
+                        <a href="#sponsors" class="btn btn-secondary">Become a Sponsor</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="wireframe-box">
+                        <div class="wireframe-glow"></div>
+                        <span>[ CAD RENDER PLACEHOLDER ]</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stat-strip">
+                <div class="stat-item">
+                    <span class="stat-value">3</span>
+                    <span class="stat-label">Competitions</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">5</span>
+                    <span class="stat-label">Awards</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">14-4</span>
+                    <span class="stat-label">Season Record</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY CAROUSEL -->
+        <section id="gallery" class="page fade-in">
+            <div class="page-header">
+                <h2>Visual Highlights</h2>
+                <p>A closer look into our iterations, competitions, and outreach events.</p>
+            </div>
+
+            <div class="carousel-wrapper">
+                <div class="carousel-track">
+                    <div class="carousel-slide active">
+                        <div class="placeholder-img" style="background:#111827">Drop image in assets/gallery/</div>
+                        <div class="carousel-caption">Chassis CAD Verification</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="placeholder-img" style="background:#1F2A3A">Drop image in assets/robot/</div>
+                        <div class="carousel-caption">Mecanum Drive Subsystem Assembly</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="placeholder-img" style="background:#0B1220">Drop image in assets/awards/</div>
+                        <div class="carousel-caption">Regional Competition Matches</div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn prev-btn" aria-label="Previous Slide">&larr;</button>
+                <button class="carousel-btn next-btn" aria-label="Next Slide">&rarr;</button>
+            </div>
+            <div class="carousel-indicators">
+                <button class="indicator active" data-index="0" aria-label="Slide 1"></button>
+                <button class="indicator" data-index="1" aria-label="Slide 2"></button>
+                <button class="indicator" data-index="2" aria-label="Slide 3"></button>
+            </div>
+        </section>
+
+        <!-- ROBOT PAGE -->
+        <section id="robot" class="page fade-in">
+            <div class="page-header">
+                <h2>System Architecture</h2>
+                <p>Iteration history and mechanical subsystem breakdown.</p>
+            </div>
+
+            <div class="robot-hero">
+                <div class="robot-hero-img">
+                    <span>[ Drop full robot image in assets/robot ]</span>
+                </div>
+            </div>
+
+            <h3 class="section-title">Subsystems</h3>
+            <div class="grid grid-3">
+                <div class="card">
+                    <h4>Mecanum Drivetrain</h4>
+                    <p>Custom machined chassis with 14:1 gear ratio for optimal acceleration and field traversal speed.
+                    </p>
+                </div>
+                <div class="card">
+                    <h4>Active Intake</h4>
+                    <p>Compliant wheel system capable of rapid pixel and hex acquisition from any orientation.</p>
+                </div>
+                <div class="card">
+                    <h4>Scoring Mechanism</h4>
+                    <p>Linear slide elevator utilizing a virtual four-bar linkage to deposit elements efficiently.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM PAGE -->
+        <section id="team" class="page fade-in">
+            <div class="page-header">
+                <h2>The Engineers</h2>
+                <p>Structured operations and dedicated subteams driving the project forward. Add more in <span
+                        style="font-family: monospace; color:#7DD3FC">team-members.json</span></p>
+            </div>
+
+            <div class="grid grid-3" id="team-grid">
+                <!-- Dynamically populated from team-members.json via JS -->
+            </div>
+        </section>
+
+        <!-- REGISTRATION PAGE -->
+        <section id="registration" class="page fade-in">
+            <div class="registration-layout">
+                <div class="registration-info">
+                    <h2 class="reg-title">Become a pioneer.</h2>
+                    <p class="reg-subtitle">We are actively recruiting dedicated engineers, programmers, and business
+                        minds for the upcoming FTC season. Join us to push the limits of autonomous control and
+                        mechanical precision with SWERVO.</p>
+                </div>
+                <div class="registration-action">
+                    <!-- Clean, minimalistic apply button -->
+                    <a href="mailto:apply@swervo.org" class="btn-clean-apply">APPLY NOW</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPONSORS PAGE -->
+        <section id="sponsors" class="page fade-in">
+            <div class="page-header">
+                <h2>Corporate Partners</h2>
+                <p>Our work is made possible by these incredible sponsors.</p>
+            </div>
+
+            <div class="sponsor-tiers">
+                <div class="tier gold-tier">
+                    <h3 class="gold-text">Gold Tier</h3>
+                    <div class="grid grid-2">
+                        <div class="card sponsor-card">TD Bank</div>
+                        <div class="card sponsor-card">Local Tech Inc.</div>
+                    </div>
+                </div>
+                <div class="tier silver-tier">
+                    <h3 class="silver-text">Silver Tier</h3>
+                    <div class="grid grid-3">
+                        <div class="card sponsor-card">Community Partner A</div>
+                        <div class="card sponsor-card">Engineering Firm B</div>
+                        <div class="card sponsor-card">Software Co.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-banner card">
+                <h3>Support the next generation of engineers</h3>
+                <p>Your sponsorship provides raw materials, registration fees, and educational resources crucial for our
+                    competitive season.</p>
+                <a href="mailto:contact@swervo.org" class="btn btn-primary">Download Sponsor Packet</a>
+            </div>
+        </section>
+
+        <!-- OUTREACH PAGE -->
+        <section id="outreach" class="page fade-in">
+            <div class="page-header">
+                <h2>Community Impact</h2>
+                <p>Expanding STEM accessibility beyond the robotics lab.</p>
+            </div>
+            <div class="timeline">
+                <div class="card timeline-item">
+                    <h4>Middle School STEM Night</h4>
+                    <span class="date">October 2025</span>
+                    <p>Demonstrated the robot to 150+ students, sparking interest in the high school engineering
+                        program.</p>
+                </div>
+                <div class="card timeline-item">
+                    <h4>FLL Mentorship</h4>
+                    <span class="date">September 2025 - Present</span>
+                    <p>Weeky mentorship sessions for 3 local FIRST Lego League teams focusing on programming and core
+                        values.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS PAGE -->
+        <section id="stats" class="page fade-in">
+            <div class="page-header">
+                <h2>Live Competition Telemetry</h2>
+                <p>Real-time data synced from the FTC Events API for Team 26256.</p>
+            </div>
+
+            <div id="stats-container">
+                <div class="loader">Establishing connection to FTC API...</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 SWERVO FTC 26256. All systems operational.</p>
+            <div class="footer-links">
+                <a href="https://firstinspires.org" target="_blank">FIRST</a>
+                <a href="https://github.com/swervo" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

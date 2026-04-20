@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Alex R.",
+        "title": "Lead Engineer",
+        "grade": "12th",
+        "bio": "4 years of FTC experience. Drives the mechanical design and CAD modeling."
+    },
+    {
+        "name": "Jordan M.",
+        "title": "Programming Lead",
+        "grade": "11th",
+        "bio": "Specializes in odometry, autonomous pathing, and vision pipelines."
+    },
+    {
+        "name": "Taylor K.",
+        "title": "CAD Designer",
+        "grade": "10th",
+        "bio": "Translates mechanical concepts into precise 3D Fusion360 models."
+    },
+    {
+        "name": "Sam L.",
+        "title": "Business/Outreach",
+        "grade": "12th",
+        "bio": "Secures sponsorships and manages community STEM volunteering events."
+    },
+    {
+        "name": "Casey B.",
+        "title": "Build Team",
+        "grade": "9th",
+        "bio": "Fabricates parts and assembles the custom mecanum drivetrain and intake."
+    },
+    {
+        "name": "Jamie V.",
+        "title": "Vision Systems",
+        "grade": "11th",
+        "bio": "Uses OpenCV and TensorFlow for accurate autonomous element detection."
+    }
+]
