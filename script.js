@@ -98,7 +98,10 @@ async function loadTeamData() {
         const members = await response.json();
 
         teamGrid.innerHTML = members.map(m => `
-            <div class="card">
+            <div class="card team-card">
+                <div class="team-photo-container">
+                    <img src="${m.image || 'assets/team/placeholder.jpg'}" alt="${m.name}" class="team-photo" onerror="this.onerror=null; this.parentElement.style.display='none';">
+                </div>
                 <div class="team-card-header">
                     <h4>${m.name}</h4>
                     <span class="team-role">${m.title}</span>
