@@ -202,42 +202,14 @@ async function loadFTCStats() {
 
     try {
         setTimeout(() => {
-            const ftcResponsePayload = {
-                rank: 6,
-                opr: 112.4,
-                record: "14-4-0",
-                lastMatch: "215 pts",
-                awards: ["Inspire Award Winner", "Design Award Finalist"]
-            };
-
             const html = `
-                <div class="api-card-grid">
-                    <div class="card api-card">
-                        <div class="stat-value">#${ftcResponsePayload.rank}</div>
-                        <div class="stat-label">Regional Rank</div>
-                    </div>
-                    <div class="card api-card">
-                        <div class="stat-value">${ftcResponsePayload.opr}</div>
-                        <div class="stat-label">Calculated OPR</div>
-                    </div>
-                    <div class="card api-card">
-                        <div class="stat-value">${ftcResponsePayload.record}</div>
-                        <div class="stat-label">W-L-T Record</div>
-                    </div>
-                    <div class="card api-card">
-                        <div class="stat-value">${ftcResponsePayload.lastMatch}</div>
-                        <div class="stat-label">Last Match Score</div>
-                    </div>
-                </div>
-
-                <h3 class="section-title">Season Awards (Auto-Synced)</h3>
-                <div class="grid grid-2">
-                    ${ftcResponsePayload.awards.map(award => `
-                        <div class="card">
-                            <h4>${award}</h4>
-                            <p>Event: Regional Championship</p>
-                        </div>
-                    `).join('')}
+                <div class="card" style="text-align: center; padding: 64px 24px; background: linear-gradient(to bottom, var(--bg-surface), rgba(125,211,252,0.05)); border: 1px dashed var(--border-dark);">
+                    <svg viewBox="0 0 24 24" width="48" height="48" stroke="var(--accent-blue)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 24px;">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 16px;">Season is yet to start!</h3>
+                    <p style="max-width: 500px; margin: 0 auto; color: var(--text-secondary);">Live FTC telemetry data, match results, and season awards will automatically synchronize and populate here as soon as our official competitions begin.</p>
                 </div>
             `;
 
