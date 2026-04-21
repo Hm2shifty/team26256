@@ -961,3 +961,33 @@ footer {
   height: 2px;
   background-color: var(--accent-blue);
 }
+
+/* RESPONSIVE LOGO HERO */
+.logo-hero-container {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.logo-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 60px rgba(125, 211, 252, 0.15);
+  position: relative;
+  z-index: 2;
+  border: 2px solid var(--border-dark);
+}
+
+@media (max-width: 768px) {
+  .logo-hero-container {
+    max-width: 250px;
+    margin-top: 32px;
+  }
+}
