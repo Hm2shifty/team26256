@@ -14,7 +14,35 @@
     ],
     "rewrites": [
         {
-            "source": "/(.*)",
+            "source": "/team",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/robot",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/sponsors",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/gallery",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/portfolio",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/stats",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/contact",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/registration",
             "destination": "/index.html"
         }
     ]
