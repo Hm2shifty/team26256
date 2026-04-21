@@ -13,39 +13,58 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navContainer = document.querySelector('.nav-links');
 
-    function navigate(hash) {
-        if (!hash) hash = '#home';
+    function navigate(path) {
+        if (!path || path === '/') path = '/home';
+        const pageId = path.substring(1);
 
         pages.forEach(page => page.classList.remove('active'));
 
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === hash) {
+            if (link.getAttribute('href') === path || (path === '/home' && link.getAttribute('href') === '/')) {
                 link.classList.add('active');
             }
         });
 
-        const targetPage = document.querySelector(hash);
+        const targetPage = document.getElementById(pageId);
         if (targetPage) {
             targetPage.classList.add('active');
             window.scrollTo(0, 0);
         } else {
-            document.querySelector('#home').classList.add('active');
+            const defaultHome = document.querySelector('#home');
+            if (defaultHome) defaultHome.classList.add('active');
         }
 
         navContainer.classList.remove('show');
 
         // Lazy-loading dependencies
-        if (hash === '#team' && !teamLoaded) loadTeamData();
-        if (hash === '#stats' && !statsLoaded) loadFTCStats();
+        if (pageId === 'team' && !teamLoaded) loadTeamData();
+        if (pageId === 'stats' && !statsLoaded) loadFTCStats();
     }
 
     mobileMenuBtn.addEventListener('click', () => {
         navContainer.classList.toggle('show');
     });
 
-    window.addEventListener('hashchange', () => navigate(window.location.hash));
-    navigate(window.location.hash || '#home');
+    // Intecept all internal hyperlink clicks logically
+    document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('/') && !href.startsWith('//')) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                history.pushState(null, '', href);
+                navigate(href);
+            });
+        }
+    });
+
+    // Detect hardware browser backward / forward arrow toggles
+    window.addEventListener('popstate', () => {
+        navigate(window.location.pathname);
+    });
+
+    // Execute runtime native
+    navigate(window.location.pathname);
 
     // 2. Carousel Logic
     const track = document.querySelector('.carousel-track');
