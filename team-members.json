@@ -1,44 +1,121 @@
 [
     {
-        "name": "Alex R.",
-        "title": "Lead Engineer",
+        "name": "Heth Maheswari",
+        "title": "Captain",
         "grade": "12th",
-        "image": "assets/team/alex.jpg",
-        "bio": "4 years of FTC experience. Drives the mechanical design and CAD modeling."
+        "image": "assets/team/heth.jpg",
+        "bio": "Captain of Vex Robotics team. FRC 1325 Inverse Paradox alumni, FTC veteran, and part of DPCDSB Skills Team."
     },
     {
-        "name": "Jordan M.",
-        "title": "Programming Lead",
+        "name": "Aaron Thukalan",
+        "title": "Software Engineer",
+        "grade": "12th",
+        "image": "assets/team/aaron.jpg",
+        "bio": "FLL Competitor. Comfortable programming in Python and Java. Highly skilled in advanced logic, math, and physics."
+    },
+    {
+        "name": "Allison Song",
+        "title": "Business & Outreach",
+        "grade": "12th",
+        "image": "assets/team/allison.jpg",
+        "bio": "Driving operations, organizational team management, and community outreach."
+    },
+    {
+        "name": "Anny Xu",
+        "title": "Team Member",
+        "grade": "12th",
+        "image": "assets/team/anny.jpg",
+        "bio": "Dedicated to iterative learning through advanced mechanical robotics lessons."
+    },
+    {
+        "name": "Kacper Janik",
+        "title": "Build & Drive Team",
         "grade": "11th",
-        "image": "assets/team/jordan.jpg",
-        "bio": "Specializes in odometry, autonomous pathing, and vision pipelines."
+        "image": "assets/team/kacper.jpg",
+        "bio": "Veteran builder and driver with multiple years of regional robotics teamwork experience."
     },
     {
-        "name": "Taylor K.",
-        "title": "CAD Designer",
+        "name": "Kyran Weiss",
+        "title": "Team Member",
+        "grade": "12th",
+        "image": "assets/team/kyran.jpg",
+        "bio": "Provincial First Lego League Robotics competitor."
+    },
+    {
+        "name": "Lakshya Kharbanda",
+        "title": "Builder & Programmer",
         "grade": "10th",
-        "image": "assets/team/taylor.jpg",
-        "bio": "Translates mechanical concepts into precise 3D Fusion360 models."
+        "image": "assets/team/lakshya.jpg",
+        "bio": "Experienced in mechanical design and building, alongside foundational Python software logistics."
     },
     {
-        "name": "Sam L.",
-        "title": "Business/Outreach",
+        "name": "Mark Lou",
+        "title": "Software & CAD Lead",
         "grade": "12th",
-        "image": "assets/team/sam.jpg",
-        "bio": "Secures sponsorships and manages community STEM volunteering events."
+        "image": "assets/team/mark.jpg",
+        "bio": "Over a decade of programming experience (Python, Java, C++). Extensive background in mechanical AutoCAD design and complex automated logic."
     },
     {
-        "name": "Casey B.",
-        "title": "Build Team",
+        "name": "Michael Sequeira",
+        "title": "Hardware/Software Integration",
+        "grade": "12th",
+        "image": "assets/team/michael.jpg",
+        "bio": "Bridging physical and digital spaces with deep experience in Arduino and Raspberry Pi hardware infrastructure."
+    },
+    {
+        "name": "Muhammad Saim",
+        "title": "Engineer",
+        "grade": "12th",
+        "image": "assets/team/muhammad.jpg",
+        "bio": "Former assistant with FX Robotics Team. Strongly focused on personal robotic systems engineering projects."
+    },
+    {
+        "name": "Rudra Panchal",
+        "title": "Prototype Designer",
         "grade": "9th",
-        "image": "assets/team/casey.jpg",
-        "bio": "Fabricates parts and assembles the custom mecanum drivetrain and intake."
+        "image": "assets/team/rudra.jpg",
+        "bio": "Specializes in digital design, rapid prototyping, and complex internal digital system configurations."
     },
     {
-        "name": "Jamie V.",
-        "title": "Vision Systems",
+        "name": "Rugved Shinde",
+        "title": "Software Architect",
+        "grade": "10th",
+        "image": "assets/team/rugved.jpg",
+        "bio": "3x Hackathon Winner. Full-Stack Dev and Backend ML. Former VEX Team Captain driving technical software paradigms."
+    },
+    {
+        "name": "Sophia Liang",
+        "title": "Programmer",
+        "grade": "12th",
+        "image": "assets/team/sophia.jpg",
+        "bio": "Veteran FTC competitor. Strong foundational background in computer science and autonomous hardware logic."
+    },
+    {
+        "name": "Sarvatit Patel",
+        "title": "Business & Engineering",
+        "grade": "12th",
+        "image": "assets/team/sarvatit.jpg",
+        "bio": "Former FLL Captain and FRC 1325 alumni. Skilled in Python, CAD, and scalable entrepreneurial venture management."
+    },
+    {
+        "name": "Jayden Li",
+        "title": "Engineer",
+        "grade": "12th",
+        "image": "assets/team/jayden.jpg",
+        "bio": "Three years of competitive robotics experience currently engineering custom automated aerial drone architectures."
+    },
+    {
+        "name": "Braydon Keating",
+        "title": "CAD Designer",
         "grade": "11th",
-        "image": "assets/team/jamie.jpg",
-        "bio": "Uses OpenCV and TensorFlow for accurate autonomous element detection."
+        "image": "assets/team/braydon.jpg",
+        "bio": "Translating complex mechanical concepts into tangible physical reality using rigorous CAD layout skills."
+    },
+    {
+        "name": "Karim Abdelkareem",
+        "title": "Team Member",
+        "grade": "12th",
+        "image": "assets/team/karim.jpg",
+        "bio": "Experienced mechanical builder with a background in foundational middle school systems competitions."
     }
 ]
