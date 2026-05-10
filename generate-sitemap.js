@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const siteUrl = 'https://swervo26256.com';
+const siteUrl = 'https://swervo26256.vercel.app';
 
 const staticRoutes = [
   '/',
