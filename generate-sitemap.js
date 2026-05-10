@@ -7,7 +7,6 @@ const staticRoutes = [
   '/gallery',
   '/portfolio',
   '/robot',
-  '/team',
   '/sponsors',
   '/stats',
   '/contact',

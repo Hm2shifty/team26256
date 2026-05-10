@@ -1,41 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
+// Team page temporarily hidden from nav.
+// To restore: uncomment the NavLink in Header.jsx and restore this component's full content.
 function Team() {
-  const [members, setMembers] = useState([]);
-
-  useEffect(() => {
-    fetch('/team-members.json')
-      .then(res => res.json())
-      .then(data => setMembers(data))
-      .catch(err => console.error("Could not load team-members.json", err));
-  }, []);
-
   return (
     <section className="page fade-in" style={{ display: 'block' }}>
       <div className="page-header">
         <h2>The Engineers</h2>
-        <p>Structured operations and dedicated subteams driving the project forward.</p>
+        <p>Our team roster is still being finalized. Check back soon!</p>
       </div>
-
-      <div className="grid grid-3">
-        {members.map((m, i) => (
-          <div key={i} className="card team-card">
-            <div className="team-photo-container">
-              <img 
-                src={m.image || '/assets/team/placeholder.jpg'} 
-                alt={m.name} 
-                className="team-photo" 
-                onError={(e) => { e.target.onerror = null; e.target.parentElement.style.display = 'none'; }} 
-              />
-            </div>
-            <div className="team-card-header">
-              <h4>{m.name}</h4>
-              <span className="team-role">{m.title}</span>
-            </div>
-            <span className="team-subteam">Grade: {m.grade}</span>
-            <p style={{ marginTop: '12px', fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.5' }}>{m.bio}</p>
-          </div>
-        ))}
+      <div className="card" style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center', padding: '48px' }}>
+        <h3 style={{ marginBottom: '16px' }}>Roster Coming Soon</h3>
+        <p style={{ color: 'var(--text-secondary)', lineHeight: '1.7' }}>
+          We're finalizing our team roster for the 2026 season. Our members are currently being confirmed — 
+          check back in a few months to meet the full crew behind SWERVO 26256.
+        </p>
       </div>
     </section>
   );

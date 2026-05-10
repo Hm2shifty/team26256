@@ -10,12 +10,12 @@ function NotFound() {
       <p style={{ color: 'var(--text-secondary)', fontSize: '18px', maxWidth: '500px', marginBottom: '32px' }}>
         We couldn't find the page you're looking for. It might have been moved, deleted, or never existed in the first place.
       </p>
-      <Link 
-        to="/" 
-        className="btn" 
+      <Link
+        to="/"
+        className="btn"
         style={{ padding: '12px 24px', fontSize: '16px', fontWeight: '500' }}
       >
-        Return to Base
+        Return to Home
       </Link>
     </section>
   );

@@ -12,6 +12,7 @@ function Header() {
     <header>
       <div className="container nav-container">
         <Link to="/" className="logo" onClick={closeMenu}>
+          <img src="/assets/swervologo.jpg" alt="SWERVO Logo" style={{ height: '36px', width: '36px', borderRadius: '50%', objectFit: 'cover', marginRight: '10px', verticalAlign: 'middle' }} />
           SWERVO <span className="team-number">26256</span>
         </Link>
 
@@ -26,7 +27,7 @@ function Header() {
           <NavLink to="/gallery" onClick={closeMenu} className={({ isActive }) => (isActive ? 'active' : '')}>Gallery</NavLink>
           <NavLink to="/portfolio" onClick={closeMenu} className={({ isActive }) => (isActive ? 'active' : '')}>Portfolio</NavLink>
           <NavLink to="/robot" onClick={closeMenu} className={({ isActive }) => (isActive ? 'active' : '')}>Robot</NavLink>
-          <NavLink to="/team" onClick={closeMenu} className={({ isActive }) => (isActive ? 'active' : '')}>Team</NavLink>
+          {/* Team page hidden — re-add NavLink here when ready */}
           <NavLink to="/sponsors" onClick={closeMenu} className={({ isActive }) => (isActive ? 'active' : '')}>Sponsors</NavLink>
           <NavLink to="/stats" onClick={closeMenu} className={({ isActive }) => (isActive ? 'active' : '')}>Stats</NavLink>
           <NavLink to="/notebook" onClick={closeMenu} className={({ isActive }) => (isActive ? 'active' : '')}>Notebook</NavLink>
