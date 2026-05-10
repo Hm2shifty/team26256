@@ -103,6 +103,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 80px;
+  gap: 16px;
 }
 
 .nav-actions {
@@ -125,13 +126,15 @@ header {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--text-primary);
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .team-number {
@@ -145,8 +148,9 @@ header {
 
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: 24px;
   align-items: center;
+  flex-wrap: nowrap;
 }
 
 .nav-links a {

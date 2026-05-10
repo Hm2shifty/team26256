@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import swervoLogo from '/assets/swervologo.jpg';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +12,7 @@ function Header() {
     <header>
       <div className="container nav-container">
         <Link to="/" className="logo" onClick={closeMenu}>
-          <img src={swervoLogo} alt="SWERVO Logo" style={{ height: '36px', width: '36px', borderRadius: '50%', objectFit: 'cover', marginRight: '10px', verticalAlign: 'middle' }} />
+          <img src="/assets/swervologo.jpg" alt="SWERVO Logo" style={{ height: '34px', width: '34px', borderRadius: '50%', objectFit: 'cover', marginRight: '8px', verticalAlign: 'middle', flexShrink: 0 }} />
           SWERVO <span className="team-number">26256</span>
         </Link>
 
