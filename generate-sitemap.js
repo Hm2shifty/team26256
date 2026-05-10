@@ -1,7 +1,6 @@
 import fs from 'fs';
-import path from 'path';
 
-const siteUrl = 'https://swervo26256.com'; // Change to actual production URL
+const siteUrl = 'https://swervo26256.com';
 
 const staticRoutes = [
   '/',
@@ -16,21 +15,22 @@ const staticRoutes = [
   '/notebook'
 ];
 
-function generateNotebookRoutes(data, basePath = '/notebook') {
+function generateNotebookRoutes(data) {
   let routes = [];
   
-  const processNode = (node, currentPath) => {
-    routes.push(currentPath);
-    
+  const processNode = (node) => {
+    if (node.content && node.id) {
+      routes.push(`/notebook/${node.id}`);
+    }
     const children = node.subsections || node.sections || [];
     for (const child of children) {
-      processNode(child, `${currentPath}/${child.id}`);
+      processNode(child);
     }
   };
   
   if (data.sections) {
     for (const section of data.sections) {
-      processNode(section, `${basePath}/${section.id}`);
+      processNode(section);
     }
   }
   

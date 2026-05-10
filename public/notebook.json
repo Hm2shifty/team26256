@@ -1,19 +1,46 @@
 {
+  "landing": {
+    "title": "Season 2026 Engineering Notebook",
+    "content": "Welcome to SWERVO 26256's engineering notebook. This year, our focus is on robust autonomous paths and reliable hardware. We began our journey by prototyping our [Drivetrain Code] to ensure smooth field navigation. At the same time, our hardware subteam started work on an [Active Intake System] to reliably acquire elements. We invite you to read through our iterations and learn about our engineering process.",
+    "links": {
+      "Drivetrain Code": "drivetrain-iteration-1",
+      "Active Intake System": "intake-prototyping-phase"
+    }
+  },
   "sections": [
     {
       "id": "software",
       "title": "Software",
+      "icon": "code",
       "subsections": [
         {
           "id": "drivetrain-code",
           "title": "Drivetrain Code",
           "subsections": [
             {
-              "id": "iteration-1",
+              "id": "drivetrain-iteration-1",
               "title": "Iteration 1",
               "date": "2026-09-18",
               "author": "Aaron",
-              "content": "In our first iteration of the drivetrain code, we implemented basic mecanum control logic using field-centric navigation. The primary goal was to ensure smooth strafing and consistent odometry tracking. We utilized a custom PID controller for rotational stability, which significantly reduced drift during high-speed translation. Moving forward, we plan to tune the feedforward constants to account for the chassis' weight distribution."
+              "content": "Today we wrote the initial mecanum drive code using the [REV Control Hub] and tested encoder feedback. The primary goal was to ensure smooth strafing and consistent odometry tracking. We utilized a custom PID controller for rotational stability.",
+              "links": {
+                "REV Control Hub": "hardware-control-hub",
+                "encoder feedback": "software-encoders"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sensors",
+          "title": "Sensors & Logic",
+          "subsections": [
+            {
+              "id": "software-encoders",
+              "title": "Encoder Calibration",
+              "date": "2026-09-22",
+              "author": "Aaron",
+              "content": "We implemented dead-wheel odometry to accurately track robot position regardless of wheel slip. Calibrating the track width took several attempts, but we finally achieved a precision of +/- 1cm over a full field translation.",
+              "links": {}
             }
           ]
         }
@@ -22,17 +49,33 @@
     {
       "id": "hardware",
       "title": "Hardware",
+      "icon": "tool",
       "subsections": [
         {
           "id": "intake",
           "title": "Active Intake System",
           "subsections": [
             {
-              "id": "prototyping-phase",
+              "id": "intake-prototyping-phase",
               "title": "Prototyping Phase",
               "date": "2026-09-20",
               "author": "Sarah",
-              "content": "Initial tests with compliant wheels showed promise, but we encountered slipping when acquiring elements from off-angles. We tested different durometer wheels (35A vs 50A) and found that a mixed setup provides the best grip-to-slip ratio. The intake geometry was adjusted to a 30-degree approach angle, reducing the time required to securely grab a pixel by 40%."
+              "content": "Initial tests with compliant wheels showed promise, but we encountered slipping when acquiring elements from off-angles. We adjusted the geometry to a 30-degree approach angle.",
+              "links": {}
+            }
+          ]
+        },
+        {
+          "id": "electronics",
+          "title": "Electronics",
+          "subsections": [
+            {
+              "id": "hardware-control-hub",
+              "title": "REV Control Hub Mounting",
+              "date": "2026-09-15",
+              "author": "Sarah",
+              "content": "We securely mounted the REV Control Hub centrally to ensure the IMU is perfectly aligned with the robot's center of rotation. Wiring was routed cleanly to avoid entanglement with moving mechanisms.",
+              "links": {}
             }
           ]
         }

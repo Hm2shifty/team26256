@@ -61,37 +61,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://swervo26256.com/notebook/software</loc>
+    <loc>https://swervo26256.com/notebook/drivetrain-iteration-1</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://swervo26256.com/notebook/software/drivetrain-code</loc>
+    <loc>https://swervo26256.com/notebook/software-encoders</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://swervo26256.com/notebook/software/drivetrain-code/iteration-1</loc>
+    <loc>https://swervo26256.com/notebook/intake-prototyping-phase</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://swervo26256.com/notebook/hardware</loc>
-    <lastmod>2026-05-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://swervo26256.com/notebook/hardware/intake</loc>
-    <lastmod>2026-05-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://swervo26256.com/notebook/hardware/intake/prototyping-phase</loc>
+    <loc>https://swervo26256.com/notebook/hardware-control-hub</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
