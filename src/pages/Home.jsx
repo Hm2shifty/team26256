@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import swervoLogo from '/assets/swervologo.jpg';
 
 function Home() {
   const [sponsors, setSponsors] = useState([]);
@@ -32,8 +33,7 @@ function Home() {
           <div className="logo-hero-container">
             <div className="wireframe-glow" style={{ borderRadius: '50%' }}></div>
             <img 
-              src="/assets/swervologo.jpg" 
-              onError={(e) => { e.target.onerror = null; e.target.src = 'https://raw.githubusercontent.com/Hm2shifty/team26256/main/assets/swervologo.jpg'; }} 
+              src={swervoLogo} 
               alt="SWERVO 26256 Logo" 
               className="logo-hero-img" 
             />
