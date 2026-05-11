@@ -12,6 +12,7 @@ function Contact() {
         <form action="https://api.web3forms.com/submit" method="POST" className="contact-form">
           <input type="hidden" name="access_key" value="e72fee4f-75b9-4bff-9aa8-e1b354e12279" />
           <input type="hidden" name="subject" value="New Website Inquiry [SWERVO 26256]" />
+          <input type="hidden" name="redirect" value="https://swervo26256.vercel.app/submit" />
 
           <div className="form-group" style={{ marginBottom: '16px' }}>
             <label htmlFor="name" style={{ display: 'block', marginBottom: '8px' }}>Name</label>
